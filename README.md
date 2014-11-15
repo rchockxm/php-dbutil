@@ -21,10 +21,10 @@ $database = getcwd() . "/database";
 $db = new \DBCls\DB("mysql", $database);
 
 $config = array(
-    "hostname" => "mysql.888webhost.com",
-    "username" => "u871097379_a",
-    "userpwd" => "123456",
-    "database" => "u871097379_a",
+    "hostname" => "",
+    "username" => "",
+    "userpwd" => "",
+    "database" => "",
     "charset" => "utf8"
 );
 
