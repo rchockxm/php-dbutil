@@ -5,6 +5,8 @@ PHP library for database (CRUD and more)
 
 <h2><a name="about" class="anchor" href="#about"><span class="mini-icon mini-icon-link"></span></a>About</h2>
 
+PHP database framework to accelerate development.
+
 <h2><a name="usage" class="anchor" href="#about"><span class="mini-icon mini-icon-link"></span></a>Require</h2>
 
 -PHP 5.3+
