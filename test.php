@@ -7,7 +7,7 @@ $database = getcwd() . "/database";
 $db = new \DBCls\DB("mysql", $database);
 
 $config = array(
-    "hostname" => ".888webhost.com",
+    "hostname" => "",
     "username" => "",
     "userpwd" => "",
     "database" => "",
