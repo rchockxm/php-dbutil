@@ -7,11 +7,11 @@ PHP library for database (CRUD and more)
 
 PHP database framework to accelerate development.
 
-<h2><a name="usage" class="anchor" href="#about"><span class="mini-icon mini-icon-link"></span></a>Require</h2>
+<h2><a name="require" class="anchor" href="#require"><span class="mini-icon mini-icon-link"></span></a>Require</h2>
 
 -PHP 5.3+
 
-<h2><a name="usage" class="anchor" href="#about"><span class="mini-icon mini-icon-link"></span></a>Usage</h2>
+<h2><a name="usage" class="anchor" href="#usage"><span class="mini-icon mini-icon-link"></span></a>Usage</h2>
 
 ```php
 <?php
@@ -46,7 +46,7 @@ $db->close($connect);
 ?>
 ```
 
-<h2><a name="about" class="anchor" href="#about"><span class="mini-icon mini-icon-link"></span></a>Changelog</h2>
+<h2><a name="changelog" class="anchor" href="#changelog"><span class="mini-icon mini-icon-link"></span></a>Changelog</h2>
 
 <h4>1.0</h4/>
 - Fixed some bugs.
