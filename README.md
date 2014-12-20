@@ -36,7 +36,7 @@ $connect = $db->connect($config);
 $db->close($connect);
 ```
 
-<h2><a name="db-select" class="anchor" href="#db-select"><span class="mini-icon mini-icon-link"></span></a>Select</h2>
+<h2><a name="demo" class="anchor" href="#demo"><span class="mini-icon mini-icon-link"></span></a>Demo</h2>
 
 ```php
 // Insert
