@@ -65,15 +65,21 @@ $insert = $db->util($connect)->table("test")->insert(array(
     'name' => 'test' . rand(1, 1000)
 ));
 
+print_r( $insert );
+
 // Total
-$insert = $db->util($connect)->table("test")->total(array(
+$total = $db->util($connect)->table("test")->total(array(
     'name' => 'test1234'
 ));
+
+print_r( $total );
 
 // Select
 $select = $db->util($connect)->table("test")->select(array(
     'name' => 'test1234'
 ));
+
+print_r( $select );
 ```
 
 <h2><a name="changelog" class="anchor" href="#changelog"><span class="mini-icon mini-icon-link"></span></a>Changelog</h2>
