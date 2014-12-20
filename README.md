@@ -81,6 +81,56 @@ $select = $db->util($connect)->table("test")->select(array(
 print_r( $select );
 ```
 
+<h2><a name="function" class="anchor" href="#function"><span class="mini-icon mini-icon-link"></span></a>Function</h2>
+
+```php
+// Standard
+$db->guid();
+$db->util();
+$db->getInstance();
+$db->connect();
+$db->close();
+$db->query();
+$db->freeResult();
+$db->fetchAssoc();
+$db->fetchArray();
+$db->fetchRow();
+$db->fetchField();
+$db->fetchObject();
+$db->escape();
+$db->countAffected();
+$db->getLastID();
+$db->getError();
+
+// Util
+$db->util()->table();
+$db->util()->fields();
+$db->util()->where();
+$db->util()->limit();
+$db->util()->orderBy();
+$db->util()->groupBy();
+$db->util()->join();
+$db->util()->data();
+$db->util()->select();
+$db->util()->delete();
+$db->util()->update();
+$db->util()->insert();
+$db->util()->create();
+$db->util()->total();
+$db->util()->show();
+$db->util()->parseFields();
+$db->util()->parseTable();
+$db->util()->parseWhere();
+$db->util()->parseLimit();
+$db->util()->parseOrderBy();
+$db->util()->parseGroupBy();
+$db->util()->parseJoin();
+$db->util()->parseData();
+$db->util()->parseShow();
+$db->util()->parseSQL();
+$db->util()->parseReset();
+```
+
 <h2><a name="changelog" class="anchor" href="#changelog"><span class="mini-icon mini-icon-link"></span></a>Changelog</h2>
 
 <h4>1.0</h4/>
