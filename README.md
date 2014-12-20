@@ -31,7 +31,11 @@ $config = array(
 );
 
 $connect = $db->connect($config);
+```
 
+<h2><a name="db-select" class="anchor" href="#db-select"><span class="mini-icon mini-icon-link"></span></a>Select</h2>
+
+```php
 // Method 1
 $query = $db->query("SELECT * from `test`");
 
