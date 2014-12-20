@@ -40,18 +40,40 @@ $db->close($connect);
 <h2><a name="db-select" class="anchor" href="#db-select"><span class="mini-icon mini-icon-link"></span></a>Select</h2>
 
 ```php
-// Method 1
-$query = $db->query("SELECT * from `test`");
+// Insert
+$query = $db->query("INSERT INTO `test` SET `name` = 'test1234'");
+
+print_r( $query );
+
+// Total
+$query = $db->query("SELECT COUNT(*) as `total` FROM `test` WHERE `name` = 'test1234'");
+$total = $db->fetchAssoc($query);
+
+print_r( $total );
+
+// Select
+$query = $db->query("SELECT `name` FROM `test` WHERE `name` = 'test1234'");
 
 while ($row = $db->fetchAssoc($query)) {
     print_r( $row );
 }
+```
 
-// Method 2
-print_r( $db->util($connect)->table("test")->select() );
+```php
+// Insert
+$insert = $db->util($connect)->table("test")->insert(array(
+    'name' => 'test' . rand(1, 1000)
+));
 
-$db->close($connect);
-?>
+// Total
+$insert = $db->util($connect)->table("test")->total(array(
+    'name' => 'test1234'
+));
+
+// Select
+$select = $db->util($connect)->table("test")->select(array(
+    'name' => 'test1234'
+));
 ```
 
 <h2><a name="changelog" class="anchor" href="#changelog"><span class="mini-icon mini-icon-link"></span></a>Changelog</h2>
