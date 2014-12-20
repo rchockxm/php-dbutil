@@ -14,7 +14,6 @@ PHP database framework to accelerate development.
 <h2><a name="usage" class="anchor" href="#usage"><span class="mini-icon mini-icon-link"></span></a>Usage</h2>
 
 ```php
-<?php
 require("db.class.php");
 require("db.util.class.php");
 require("db.interface.php");
