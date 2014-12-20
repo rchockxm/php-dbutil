@@ -31,6 +31,10 @@ $config = array(
 );
 
 $connect = $db->connect($config);
+
+// Do something
+
+$db->close($connect);
 ```
 
 <h2><a name="db-select" class="anchor" href="#db-select"><span class="mini-icon mini-icon-link"></span></a>Select</h2>
