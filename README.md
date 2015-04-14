@@ -3,6 +3,8 @@ php-dbutil
 
 PHP library for database (CRUD and more)
 
+<img src="https://img.shields.io/dub/l/vibe-d.svg" />
+
 <h2><a name="about" class="anchor" href="#about"><span class="mini-icon mini-icon-link"></span></a>About</h2>
 
 PHP database framework to accelerate development.
