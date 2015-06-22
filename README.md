@@ -133,11 +133,6 @@ $db->util()->parseSQL();
 $db->util()->parseReset();
 ```
 
-<h2><a name="changelog" class="anchor" href="#changelog"><span class="mini-icon mini-icon-link"></span></a>Changelog</h2>
-
-<h4>1.0</h4/>
-- Fixed some bugs.
-
 <h2><a name="author" class="anchor" href="#author"><span class="mini-icon mini-icon-link"></span></a>Author</h2>
 * 2014 rchockxm (rchockxm.silver@gmail.com)
 
