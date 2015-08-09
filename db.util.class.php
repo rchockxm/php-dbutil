@@ -166,7 +166,7 @@ class DBUtil extends DB {
         if (!empty($sql)) {
             $query = $this->query($sql);
         
-            if (is_resource($query)) {
+            if (is_resource($query) || is_object($query)) {
                 $ret = new \stdClass();
                 $ret->rows = array();
                 $ret->num = 0;
@@ -303,7 +303,7 @@ class DBUtil extends DB {
         if (!empty($sql)) {
             $query = $this->query($sql);
             
-            if (is_resource($query)) {
+            if (is_resource($query) || is_object($query)) {
                 $row = $this->fetchAssoc($query);
                 $ret = (is_array($row) && array_key_exists("count", $row)) ? (int)$row["count"] : 0;
             }
@@ -335,7 +335,7 @@ class DBUtil extends DB {
         if (!empty($sql)) {
             $query = $this->query($sql);
             
-            if (is_resource($query)) {
+            if (is_resource($query) || is_object($query)) {
                 $ret = new \stdClass();
                 $ret->rows = array();
                 $ret->num = 0;
@@ -369,32 +369,34 @@ class DBUtil extends DB {
             $arrFields = array();
         
             foreach ($fields as $keyA => $keyB) {
-                if (is_string($keyB) && !empty($keyB)) {
-                    $parseFieldName = $this->findFields($keyB);
+                if (!is_string($keyB) || empty($keyB)) {
+                    continue;
+                }
+                
+                $parseFieldName = $this->findFields($keyB);
+                
+                if (!empty($parseFieldName)) {
+                    $arrFields[] = (string)$parseFieldName;
+                }
+                else {
+                    if (is_string($keyA) && !empty($keyA)) {
+                        $parseFieldName = $this->findFields($keyA, $keyB);
                     
-                    if (!empty($parseFieldName)) {
-                        $arrFields[] = (string)$parseFieldName;
-                    }
-                    else {
-                        if (is_string($keyA) && !empty($keyA)) {
-                            $parseFieldName = $this->findFields($keyA, $keyB);
-                        
-                            if (!empty($parseFieldName)) {
-                                $arrFields[] = (string)$parseFieldName;
-                            }
-                            else {
-                                $arrFields[] = "`" . 
-                                    (string)$this->parsekey($keyB) . "`.`" .
-                                    (string)$this->parsekey($keyA) . "`";
-                            }
+                        if (!empty($parseFieldName)) {
+                            $arrFields[] = (string)$parseFieldName;
                         }
                         else {
-                            $arrFields[] = "`" . (string)$this->parsekey($keyB) . "`";
+                            $arrFields[] = "`" . 
+                                (string)$this->parsekey($keyB) . "`.`" .
+                                (string)$this->parsekey($keyA) . "`";
                         }
                     }
-                    
-                    $parseFieldName = null;
+                    else {
+                        $arrFields[] = "`" . (string)$this->parsekey($keyB) . "`";
+                    }
                 }
+                
+                $parseFieldName = null;
             }
             
             $ret = (count($arrFields) > 0) ? implode(",", $arrFields) : "";

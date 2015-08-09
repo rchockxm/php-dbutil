@@ -54,7 +54,7 @@ class DBMySqli extends \DBCls\DB implements \DBCls\IADatabase {
                 $ret = $this->link;
             }
             else {
-                
+                $this->error .= "\n [ SQL Connect ] Could not connect";
             }
             
             $dbCharset = null;
@@ -62,6 +62,9 @@ class DBMySqli extends \DBCls\DB implements \DBCls\IADatabase {
             $userPassword = null;
             $userName = null;
             $hostName = null;
+        }
+        else {
+            $this->error .= "\n [ SQL Connect ] Config not found";
         }
         
         return $ret;

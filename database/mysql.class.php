@@ -58,11 +58,11 @@ class DBMySql extends \DBCls\DB implements \DBCls\IADatabase {
                     $ret = $this->link;
                 }
                 else {
-                    
+                    $this->error .= "\n [ SQL Connect ] Could not delect db";
                 }
             }
             else {
-                
+                $this->error .= "\n [ SQL Connect ] Could not connect";
             }
             
             $dbCharset = null;
@@ -72,7 +72,7 @@ class DBMySql extends \DBCls\DB implements \DBCls\IADatabase {
             $hostName = null;
         }
         else {
-        
+            $this->error .= "\n [ SQL Connect ] Config not found";
         }
         
         return $ret;
