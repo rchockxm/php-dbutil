@@ -870,7 +870,7 @@ class DBUtil extends DB {
      *         Fail - origional string
      */
     private function parseValue($value) {
-        return $value;
+        return $this->escape(trim($value), $this->link);
     }
     
     /**
